@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Nathaniah F. Taotao · Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f5;
+            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .resume-card {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 2.5rem 2.8rem;
+            transition: 0.2s;
+        }
+
+        /* Header / Name + contact */
+        .header {
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #1e3c72;
+            padding-bottom: 1.5rem;
+        }
+
+        .name {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #0b2b4a;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2.2rem;
+            font-size: 0.98rem;
+            color: #2c3e50;
+            margin-top: 0.6rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f4f8fc;
+            padding: 0.3rem 1rem 0.3rem 0.8rem;
+            border-radius: 40px;
+        }
+
+        .contact-item i {
+            font-style: normal;
+            font-weight: 500;
+            color: #1e3c72;
+        }
+
+        /* Section titles */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0b2b4a;
+            letter-spacing: 0.3px;
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid #cbdae9;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span {
+            background: #1e3c72;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-right: 12px;
+            font-weight: 600;
+        }
+
+        /* Summary list */
+        .summary-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.7rem 1.8rem;
+            background: #f9fcff;
+            padding: 1.2rem 1.5rem;
+            border-radius: 16px;
+            border: 1px solid #e0ebf5;
+        }
+
+        .summary-list li {
+            display: flex;
+            gap: 0.6rem;
+            font-size: 0.98rem;
+            color: #1f3a57;
+            align-items: flex-start;
+        }
+
+        .summary-list li::before {
+            content: "▹";
+            color: #1e3c72;
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-item {
+            background: #f3f9ff;
+            border-left: 5px solid #1e3c72;
+            padding: 0.9rem 1.4rem;
+            border-radius: 12px;
+            font-weight: 500;
+            color: #0b2b4a;
+            font-size: 1rem;
+            flex: 1 1 240px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: 0.1s ease;
+        }
+
+        .project-item:hover {
+            background: #e6f0fa;
+        }
+
+        /* Employment & education */
+        .job-item, .edu-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #cbdae9;
+        }
+
+        .job-item:last-child, .edu-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-left, .edu-left {
+            font-weight: 600;
+            color: #0b2b4a;
+            font-size: 1.05rem;
+        }
+
+        .job-right, .edu-right {
+            color: #3e5a76;
+            font-weight: 500;
+            font-size: 0.95rem;
+            background: #eaf1f8;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            white-space: nowrap;
+        }
+
+        .job-desc, .edu-desc {
+            width: 100%;
+            margin-top: 0.4rem;
+            font-size: 0.96rem;
+            color: #2b4a6b;
+            padding-left: 0.2rem;
+        }
+
+        .job-desc p, .edu-desc p {
+            margin: 0.2rem 0;
+        }
+
+        .sub-detail {
+            font-weight: 400;
+            color: #4a6f8f;
+            font-size: 0.92rem;
+            margin-top: 0.2rem;
+        }
+
+        /* compact spacing for education */
+        .edu-item {
+            padding: 0.65rem 0;
+        }
+
+        /* Footer / small print */
+        .footer-note {
+            margin-top: 2.2rem;
+            padding-top: 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #7e95ab;
+            border-top: 1px solid #dce7f0;
+        }
+
+        /* responsive */
+        @media (max-width: 650px) {
+            .resume-card {
+                padding: 1.8rem 1.4rem;
+            }
+            .name {
+                font-size: 1.9rem;
+            }
+            .contact-info {
+                gap: 0.8rem;
+            }
+            .contact-item {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.85rem;
+            }
+            .section-title {
+                font-size: 1.25rem;
+            }
+            .job-right, .edu-right {
+                margin-top: 0.2rem;
+                white-space: normal;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-card">
+        <!-- Header -->
+        <div class="header">
+            <div class="name">PRINCE NATHANIAH F. TAOTAO</div>
+            <div class="contact-info">
+                <div class="contact-item"><i>📍</i> Unit C Blk 23 Lot 6, Topland Avenue, Golden Gate Subdivision, Talon Tres, Las Piñas City, Philippines</div>
+                <div class="contact-item"><i>📞</i> 09508212721</div>
+                <div class="contact-item"><i>✉️</i> princenathaniahtaotao@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- Summary of Qualifications -->
+        <div class="section-title"><span>✦</span> Summary of Qualifications</div>
+        <ul class="summary-list">
+            <li>Basic knowledge of computer systems, software troubleshooting, and internet applications.</li>
+            <li>Knowledgeable in basic coding (HTML and C).</li>
+            <li>Strong communication skills, able to assist customers clearly and politely.</li>
+            <li>Fast learner with the ability to adapt quickly to new technologies and work environments.</li>
+            <li>Able to work efficiently in both team-based and independent settings.</li>
+        </ul>
+
+        <!-- Projects -->
+        <div class="section-title"><span>📁</span> Projects</div>
+        <div class="projects-grid">
+            <div class="project-item">Creation of automated barangay hall website</div>
+            <div class="project-item">Creation of website for documentation of a stage play</div>
+        </div>
+
+        <!-- Employment History -->
+        <div class="section-title"><span>💼</span> Employment History</div>
+        <div class="job-item">
+            <div class="job-left">Pilar Village Barangay Hall (OJT)</div>
+            <div class="job-right">2026 – 2026</div>
+            <div class="job-desc">
+                <p>C2C5+FCQ, Aguirre Corner Sapphire, Pilar, Las Piñas, 1740 Metro Manila</p>
+                <p class="sub-detail">January 08, 2026 – January 26, 2026</p>
+                <p>Assisted in creating a website for the residents' barangay clearance and applicant's information for certificates.</p>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section-title"><span>🎓</span> Education</div>
+        <div class="edu-item">
+            <div class="edu-left">Technological University of the Philippines – Manila</div>
+            <div class="edu-right">2026 – 2030</div>
+        </div>
+        <div class="edu-item">
+            <div class="edu-left">Las Piñas City National Science High School (SHS)</div>
+            <div class="edu-right">2024 – 2026</div>
+        </div>
+        <div class="edu-item">
+            <div class="edu-left">Las Piñas City National Science High School (JHS)</div>
+            <div class="edu-right">2020 – 2024</div>
+        </div>
+        <div class="edu-item">
+            <div class="edu-left">Almanza Elementary School</div>
+            <div class="edu-right">2014 – 2020</div>
+        </div>
+
+        <!-- subtle footer (optional) -->
+        <div class="footer-note">Prince Nathaniah F. Taotao · resume</div>
+    </div>
+</body>
+</html>
